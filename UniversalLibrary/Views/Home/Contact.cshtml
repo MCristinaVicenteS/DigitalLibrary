@@ -1,0 +1,90 @@
+﻿@model UniversalLibrary.Models.EmailViewModel
+
+@{
+    ViewBag.Title = "SendEmailContact";
+}
+
+<!-- Inclua o arquivo CSS externo keyframs -->
+<link rel="stylesheet" type="text/css" href="~/path/to/styles.css">
+<style>
+    
+    /* Aplica a animação à barra de progresso */
+    .progress-bar {
+        animation-name: progressAnimation;
+        animation-duration: 50s; /* Ajuste o valor para controlar a velocidade da animação */
+        animation-timing-function: linear; /* Use uma função de temporização linear para uma animação constante */
+        width: 0%;
+    }
+
+     form {
+        
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        height: 100%;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<br />
+<h1>Information Area</h1>
+<div class="alert alert-info">
+    <strong>Info!</strong> Please input your information.
+</div>
+<br />
+<form method="post" asp-action="SendEmailContact" asp-controller="Home" autocomplete="off" onsubmit="return validateForm()">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Message" class="control-label"></label>
+        <textarea asp-for="Message" class="form-control"></textarea>
+        <span asp-validation-for="Message" class="text-danger"></span>
+    </div>
+
+    <input id="btn-start" type="submit" class="btn btn-info" value="Send" />
+    <br />
+    <br />
+    <div class="progress" style="height:30px">
+        <div id="progressBar" class="progress-bar" role="progressbar" aria-valuenow="70"
+             aria-valuemin="0" aria-valuemax="100">
+            100%
+        </div>
+    </div>
+</form>
+
+<script>
+    function validateForm() {
+        console.log("validateForm chamado"); // Adicione esta linha para verificar se a função é acionada
+        var name = $("#Name").val();
+        var email = $("#Email").val();
+        var message = $("#Message").val();
+
+        if (name && email && message) {
+            // Se todos os campos estiverem preenchidos, anima a barra de progresso
+            $("#progressBar").css("width", "100%");
+            return true; // Permite o envio do formulário
+        } else {
+            // Caso contrário, exiba uma mensagem de erro personalizada com o customAlert
+            customAlert("Por favor, preencha todos os campos.");
+            return false; // Impede o envio do formulário
+        }
+    }
+
+</script>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

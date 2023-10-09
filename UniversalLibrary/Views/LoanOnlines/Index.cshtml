@@ -1,0 +1,134 @@
+﻿@model IEnumerable<UniversalLibrary.Data.Entities.LoanOnline>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<h1>Index - Loan Online</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<br />
+<br />
+
+
+@*insere uma biblioteca*@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css" />
+
+<style type="text/css">
+    .tableFixedHead {
+        overflow-y: auto;
+        height: 200px;
+    }
+
+        .tableFixedHead thead th {
+            position: sticky;
+            top: 0px;
+        }
+
+    .table {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+        .table th, .table td {
+            text-align: center;
+        }
+
+    .th {
+        text-align: center;
+    }
+
+    .td {
+        text-align: center;
+    }
+
+    thead th {
+        background-color: darkolivegreen;
+        color: white;
+    }
+
+    tr:hover {
+        background-color: bisque;
+    }
+</style>
+
+
+@*@if(Model != null && Model.Count() > 0)
+{*@
+    <table class="table">
+        <thead>
+            <tr>
+                @if (this.User.IsInRole("Admin"))@*Se o user for o admin -> vê td os Loans de td os users*@
+                {
+                    <th>
+                        @Html.DisplayNameFor(model => model.User.FullName)
+                    </th>
+                }               
+                <th>
+                    @Html.DisplayNameFor(model => model.QuantityOfLoanOnline)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.QuantityOfBooks)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.LoanDateLocal)
+                </th>                
+                @*<th>
+                    @Html.DisplayNameFor(model => model.LimitLoadDate)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.ReturnDate)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User.FullName)
+                        </td>
+                    }
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QuantityOfLoanOnline)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.QuantityOfBooks)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LoanDateLocal)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.LimitLoadDate)
+                        @if (item.LimitLoadDate < DateTime.Now)
+                        {
+                        <p>Expired</p>
+                        }
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReturnDate)
+                    </td>                   
+                    
+                    <td>
+                        <a asp-action="Accept" asp-route-id="@item.Id" class="btn btn-info" id="btnDeliver"><i class="fa fa-check" aria-hidden="true"></i> Accept</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" id="btnDelete"><i class="fa fa-trash"></i> Delete</a>
+                        @*<button type="submit" value="Delete" class="btn btn-outline-dark"><i class="fa fa-trash"></i> Delete</button>*@
+                    </td>
+                </tr>
+            }            
+        </tbody>
+    </table>
+<div>
+    <a class="btn btn-success" asp-controller="Home" a asp-action="Index"><i class="fa fa-chevron-left"></i> Back to Home</a>
+</div>
+
+@*else{
+    <h2>There are no results to present!</h2>
+}*@

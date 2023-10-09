@@ -1,0 +1,402 @@
+@model IEnumerable<UniversalLibrary.Data.Entities.LibraryFeedback>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/asset/css/bootstrap.css" rel="stylesheet" />
+<link href="~/asset/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/asset/css/responsive.css" rel="stylesheet" />
+<link href="~/asset/css/style.css" rel="stylesheet" />
+<a href="~/asset/css/style.css.map"></a>
+<!-- Inclua a biblioteca Owl Carousel CSS e JS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<!--FONTES-->
+<a href="~/asset/fonts/fontawesome-webfont.ttf"></a>
+<a href="~/asset/fonts/fontawesome-webfont.woff"></a>
+<a href="~/asset/fonts/fontawesome-webfont.woff2"></a>
+<a href="~/asset/fonts/octin_sports_rg.ttf"></a>
+
+<!--JS-->
+<script src="~/asset/js/bootstrap.js"></script>
+<script src="~/asset/js/custom.js"></script>
+<script src="~/asset/js/jquery-3.4.1.min.js"></script>
+<!--carossel-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+
+
+<div class="hero_area">
+
+    <!-- slider section -->
+    <section class="slider_section">
+        <div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-7 order-md-2">
+                                    <div class="detail-box">
+                                        <h1>
+                                            Welcome To Our <br>
+                                            Library
+                                        </h1>
+                                        <p>
+                                            Explore a world of knowledge and adventure within the pages of our books. Discover, learn, and be inspired by the stories that await you. Welcome to a universe of possibilities!
+                                        </p>
+                                        <a href="javascript:void(0);" onclick="scrollToContact()">
+                                            Contact Us
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 order-md-1">
+                                    <div class="img-box ml-md-3">
+                                        <img src="images/bannerPict.jpg" alt="" style="max-width: 100%; max-height: 100%; min-width: 900px; min-height: 50px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="carousel-item ">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="detail-box">
+                                        <h1>
+                                            Welcome To Our <br>
+                                            Library
+                                        </h1>
+                                        <p>
+                                            Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.
+                                        </p>
+                                        <a href="">
+                                            Contact Us
+                                        </a>
+                                    </div>
+                                </div>
+                                @*<div class="col-md-5 ">
+                                <div class="img-box">
+                                <img src="images/slider-img.png" alt="" />
+                                </div>
+                                </div>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="detail-box">
+                                        <h1>
+                                            Welcome To Our <br>
+                                            Library
+                                        </h1>
+                                        <p>
+                                            Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.
+                                        </p>
+                                        <a href="">
+                                            Contact Us
+                                        </a>
+                                    </div>
+                                </div>
+                                @*<div class="col-md-5 ">
+                                <div class="img-box">
+                                <img src="images/slider-img.png" alt="" />
+                                </div>
+                                </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel_btn-box">
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    @*   <img src="images/line.png" alt="" />*@
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end slider section -->
+</div>
+
+<!-- end hero area -->
+<!-- saving section -->
+<br />
+<section class="saving_section ">
+    <div class="box">
+        <div class="container-fluid">
+            <div class="row">
+                @* <div class="col-lg-6">
+                <div class="img-box">
+                <img src="images/saving-img.png" alt="">
+                </div>
+                </div>*@
+                <div class="col-lg-6">
+                    <div class="detail-box">
+                        <div class="heading_container">
+                            <h2>
+                                Donate books
+
+                            </h2>
+                        </div>
+                        <p>                            
+                            Empower minds, enrich hearts. Donate books and ignite a passion for learning that lasts a lifetime.
+                            <br />                          
+                        </p>
+                        <p>
+                            Please, check ours libraries and send an email to the library you want to donate.
+                        </p>
+                        <div class="btn-box">
+                            <a asp-action="PhisicalLibrary" asp-controller="Home" class="btn btn-success"><i class="fa fa-chevron-left"></i> Donate Now</a>
+                        </div>
+                        @* <a href="#" class="btn2">
+                        See More
+                        </a>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- end saving section -->
+<!-- why section -->
+
+<section class="why_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                Why choose our Libraries
+            </h2>
+        </div>
+    </div>
+    <!-- Existing code -->
+    <<div class="row justify-content-center">
+        <div class="col-md-3">
+            <div class="box">
+                <div class="img-box text-center" style="position: relative;">
+                    <!-- Replace this SVG code with the SVG code of the world map icon -->
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                <!-- World map SVG path here -->
+                </svg>
+                    <img src="~/images/icons/no-mundo-todo.png" alt="World Map" style="width: 38px; height: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;"  />
+                </div>                
+                <a asp-action="PhisicalLibrary" asp-controller="Home">
+                    <div class="detail-box">
+                        <h5>
+                            Accessible
+                        </h5>
+                        <p>
+                            We have libraries in various locations around the world
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="box">
+                <div class="img-box text-center" style="position: relative;">
+
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+
+                    </svg>
+
+                    <img src="~/images/icons/qualidade.png" alt="Quality" style="width: 40px; height: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;" />
+                </div>
+                <a asp-action="Books" asp-controller="Home">
+                    <div class="detail-box">
+                        <h5>
+                            Quality books
+                        </h5>
+                        <p>
+                            Our books are carefully selected
+                        </p>
+                    </div>
+                </a>                
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="box">
+                <div class="img-box text-center" style="position: relative;">
+
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+
+                    </svg>
+
+                    <img src="~/images/icons/aperto-de-mao.png" alt="Handshake" style="width: 40px; height: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;" />
+
+                </div>
+                <div class="detail-box">
+                    <h5>
+                        Empathy
+                    </h5>
+                    <p>
+                        Our employees are always very helpful.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- end why section -->
+<!-- gift section -->
+@*<section class="gift_section layout_padding-bottom">
+    <div class="box ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="img_container">
+                        <div class="img-box">
+                            <img src="images/gifts.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="detail-box">
+                        <div class="heading_container">
+                            <h2>
+                                Gifts for your <br>
+                                loved ones
+                            </h2>
+                        </div>
+                        <p>
+                            Omnis ex nam laudantium odit illum harum, excepturi accusamus at corrupti, velit blanditiis unde perspiciatis, vitae minus culpa? Beatae at aut consequuntur porro adipisci aliquam eaque iste ducimus expedita accusantium?
+                        </p>
+                        <div class="btn-box">
+                            <a href="#" class="btn1">
+                                Buy Now
+                            </a>
+                            <a href="#" class="btn2">
+                                See More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>*@
+
+
+<!-- end gift section -->
+<!-- contact section -->
+
+<section class="contact_section ">
+    <div class="container px-0">
+        <div class="heading_container ">
+            <h2 class="">
+                Talk to us
+            </h2>
+        </div>
+    </div>
+    <div class="container container-bg">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 px-0">
+                <div class="map_container">
+                    <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3111.4138178650517!2d-9.146624!3d38.7205774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd193382100b6609%3A0xc8fdf6ca0edb5fc7!2sAv.+da+Liberdade%2C+Lisboa!5e0!3m2!1spt-PT!2spt!4v1560341936255!5m2!1spt-PT!2spt" width="600" height="300" frameborder="0" style="border:0; width: 100%; height: 100%;" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-5 px-0">
+                <form asp-action="Contact">
+                    <div>
+                        <h1>Contact Us Directly</h1>
+                    </div>
+                   
+                    <div class="d-flex ">
+                        <button>
+                            CLICK HERE TO SEND MESSAGE TO US
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end contact section -->
+<!-- client section -->
+<section class="client_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                <a class="btn btn-primary" asp-area="" asp-controller="LibraryFeedbacks" asp-action="Index">LibraryFeedbacks</a>
+            </h2>
+        </div>
+    </div>
+        <div class="container">
+            <div class="owl-carousel owl-theme">
+                @foreach (var feedback in Model)
+                {
+                    <div class="box">
+                        <div class="client_info">
+                            <div class="client_name">
+                                <h5>@feedback.User.FirstName</h5>
+                                <h6>@feedback.CreatedDate.ToString("dd/MM/yyyy")</h6>
+                                <h7>@feedback.PhisicalLibrary.LibraryName</h7>
+                            </div>
+                            <i class="fa fa-quote-left" aria-hidden="true"></i>
+                        </div>
+                        <div class="star-rating">
+                            @{
+                                for (int i = 0; i < 5; i++)
+                                {
+                                    if (i < feedback.Rating)
+                                    {
+                                        <span style="color: #FFD700;">&#9733;</span> 
+                                    }
+                                    else
+                                    {
+                                        <span style="color: #FFD700;">&#9734;</span> 
+                                    }
+                                }
+                            }
+                        </div>
+                        <p>
+                            @feedback.Comment
+                        </p>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+<script>
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+            items: 1, // Número de itens a serem exibidos por vez
+            loop: true, // Repetição infinita do carrossel
+            margin: 10, // Margem entre os itens
+            autoplay: true, // Autoplay do carrossel
+            autoplayTimeout: 5000, // Tempo de espera entre os slides (em milissegundos)
+            autoplayHoverPause: true, // Pausa a reprodução automática quando o mouse passa por cima
+        });
+    });
+</script>
+
+
+<!-- end client section -->

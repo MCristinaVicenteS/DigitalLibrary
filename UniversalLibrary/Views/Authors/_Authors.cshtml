@@ -1,0 +1,75 @@
+﻿@model UniversalLibrary.Models.AuthorViewModel
+
+<div class="form-group">
+    <label asp-for="ImageFile" class="control-label"></label>
+    <input asp-for="ImageFile" class="form-control" />      @*input do file para aparecer o botão upload*@
+    <span asp-validation-for="ImageFile" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="FirstName" class="control-label"></label>
+    <input asp-for="FirstName" class="form-control" />
+    <span asp-validation-for="FirstName" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="LastName" class="control-label"></label>
+    <input asp-for="LastName" class="form-control" />
+    <span asp-validation-for="LastName" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="DateOfBirth" class="control-label"></label>
+    <div class="input-group date" data-provide="datepicker">
+        <input type="text" asp-for="DateOfBirth" class="form-control" />
+        <div class="input-group-append">
+            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+        </div>
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>    
+</div>
+<div class="form-group">
+    <label asp-for="Nif" class="control-label"></label>
+    <input asp-for="Nif" class="form-control" />
+    <span asp-validation-for="Nif" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Country" class="control-label"></label>
+    <input asp-for="Country" class="form-control" />
+    <span asp-validation-for="Country" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Nationality" class="control-label"></label>
+    <input asp-for="Nationality" class="form-control" />
+    <span asp-validation-for="Nationality" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Biography" class="control-label"></label>
+    <input asp-for="Biography" class="form-control" />
+    <span asp-validation-for="Biography" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="MajorWorks" class="control-label"></label>
+    <input asp-for="MajorWorks" class="form-control" />
+    <span asp-validation-for="MajorWorks" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="AwardsAndRecognitions" class="control-label"></label>
+    <input asp-for="AwardsAndRecognitions" class="form-control" />
+    <span asp-validation-for="AwardsAndRecognitions" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="OtherDetails" class="control-label"></label>
+    <input asp-for="OtherDetails" class="form-control" />
+    <span asp-validation-for="OtherDetails" class="text-danger"></span>
+</div>
+
+@*script para alterar o calendário*@
+@section Scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function)(){
+            $('.date').datepicker({
+                orientation: "bottom",
+                autoclose: true
+            }
+        });
+    </script>
+}

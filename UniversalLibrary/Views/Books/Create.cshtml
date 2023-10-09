@@ -1,0 +1,41 @@
+﻿@*@model UniversalLibrary.Data.Entities.Book*@
+@model UniversalLibrary.Models.BookViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Add</h1>
+
+<h4>Book</h4>
+<br />
+<p>
+    <a asp-controller="Authors" asp-action="Create" class="btn btn-outline-primary"> AUTHORS</a>
+    <a asp-controller="Categories" asp-action="Create" class="btn btn-outline-primary"> CATEGORIES</a>
+    <a asp-controller="BookPublishers" asp-action="Create" class="btn btn-outline-primary"> BOOK PUBLISHERS</a>
+    <a asp-controller="PhisicalLibraries" asp-action="Create" class="btn btn-outline-primary"> LIBRARY</a>
+</p>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">@*  inserir o enctype="multipart/form-data"*@
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>                     
+
+            <partial name="_Books"/>    
+
+            <div class="form-group">
+                <button type="submit" value="Create" class="btn btn-primary"><i class="fa fa-save"></i> Create</button> @*com icon -> podemos mudá-lo*@
+                <a asp-action="Index" class="btn btn-success"><i class="fa fa-chevron-left"></i> Back to List</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

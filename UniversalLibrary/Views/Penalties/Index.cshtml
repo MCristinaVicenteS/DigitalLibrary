@@ -1,0 +1,112 @@
+﻿@model IEnumerable<UniversalLibrary.Data.Entities.Penalty>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css" />
+
+
+<br />
+<br />
+<br />
+
+
+<p>
+    <a asp-action="Create" class="btn btn-primary"><i class="fas fa-plus"></i> Create New</a>
+</p>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Penalties</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover table-responsive table-striped" id="MyTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.InfractionType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.InfractionDateTime)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.InfractionLocation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.User)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Book)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FineAmount)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PaymentDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PaymentStatus)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.InfractionType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.InfractionDateTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.InfractionLocation.LibraryName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Book.Title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FineAmount)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PaymentDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PaymentStatus)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a> 
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> 
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#MyTable').DataTable();
+        });
+    </script>
+}

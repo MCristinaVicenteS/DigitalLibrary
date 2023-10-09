@@ -1,0 +1,46 @@
+﻿@model UniversalLibrary.Data.Entities.ReturnBook
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+<br />
+<br />
+<br />
+<h1>Create - Return Book</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ReturnDate" class="control-label"></label>
+                <input asp-for="ReturnDate" class="form-control" />
+                <span asp-validation-for="ReturnDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsDamaged" /> @Html.DisplayNameFor(model => model.IsDamaged)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PenaltyConfirmation" /> @Html.DisplayNameFor(model => model.PenaltyConfirmation)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="DamageDescription" class="control-label"></label>
+                <input asp-for="DamageDescription" class="form-control" />
+                <span asp-validation-for="DamageDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Create</button>
+                <a asp-action="Index" class="btn btn-success"><i class="fa fa-chevron-left"></i> Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

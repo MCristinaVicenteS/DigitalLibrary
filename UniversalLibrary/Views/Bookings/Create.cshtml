@@ -1,0 +1,172 @@
+﻿@model IEnumerable<UniversalLibrary.Data.Entities.BookingDetailTemp> //Cm é um lista -> usa-se um IEnumerable
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+<br />
+<br />
+<br />
+<h1>Create</h1>
+
+<p>
+    <a asp-action="AddBook" class="btn btn-success"> Add Book</a> @*  Qd clicar -> aparece outra view c a lista de books q posso adicionar a esta lista temporária*@
+    <a asp-action="ConfirmBooking" class="btn btn-primary" id="btnConfirm"> Confirm Booking</a>     @*botão confirm javs*@
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Book.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book.BookPublisher)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book.BookPublisher)
+                </td>
+                <td id="@item.Id">
+                    @*ATENÇÃO:associar um id a td os foreach c delete nas views*@
+                    <a asp-action="DeleteItem" asp-route-id="@item.Id" class="btn btn-danger" id="btnDeleteItem"><i class="fa fa-trash"></i> Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index" class="btn btn-success"><i class="fa fa-chevron-left"></i> Back to List</a>
+</div>
+
+@*JAVASCRIPT - Confirm Pop-Up*@
+<div id="confirmDialog" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Confirm Booking</h4>
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-window-close"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Do you want to confirm the booking?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="btnYesConfirm">Yes</button>
+                <button type="button" class="btn btn-success" id="btnNoConfirm">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*JAVASCRIPT - Delete Pop-Up*@
+<div id="deleteDialog" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Delete</h4>
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-window-close"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Do you want to delete the Book from your Booking?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="btnYesDelete">Yes</button>
+                <button type="button" class="btn btn-success" id="btnNoDelete">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@*<h4>Booking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BookingDate" class="control-label"></label>
+                <input asp-for="BookingDate" class="form-control" />
+                <span asp-validation-for="BookingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookingStatus" class="control-label"></label>
+                <input asp-for="BookingStatus" class="form-control" />
+                <span asp-validation-for="BookingStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookingExpirationDate" class="control-label"></label>
+                <input asp-for="BookingExpirationDate" class="form-control" />
+                <span asp-validation-for="BookingExpirationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LimitToGetTheBook" class="control-label"></label>
+                <input asp-for="LimitToGetTheBook" class="form-control" />
+                <span asp-validation-for="LimitToGetTheBook" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>*@
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var id = 0;                            /*Esta variável vai ser usada para saber qual é o Id*/
+
+            $("#btnConfirm").click(function () {
+                $("#confirmDialog").modal("show");
+                return false;
+            });
+
+            $("#btnNoConfirm").click(function () {
+                $("#confirmDialog").modal("hide");
+                return false;
+            });
+
+            $("#btnYesConfirm").click(function () {
+                window.location.href = "/LoanOnlines/ConfirmLoan";   //Se clicar no yes -> chamo a action para confirmar a encomenda
+            });
+
+            $("a[id*=btnDeleteItem]").click(function () {       //Chamar pelo Id do Item od foi clicado o botão delete
+                debugger;
+                id = $(this).parent()[0].id;
+                $("#deleteDialog").modal("show");
+                return false;
+            });
+
+            $("#btnNoDelete").click(function () {
+                $("#confirmDialog").modal("hide");
+                return false;
+            });
+
+            $("#btnYesDelete").click(function () {
+                window.location.href = "/LoanOnlines/DeleteItem" + id;    //chamo a action DeleteItem -> apago o item
+            });
+        });
+    </script>
+
+}

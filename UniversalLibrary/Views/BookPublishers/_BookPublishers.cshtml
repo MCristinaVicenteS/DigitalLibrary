@@ -1,0 +1,12 @@
+﻿@model UniversalLibrary.Models.BookPublisherViewModel
+
+<div class="form-group">
+    <label asp-for="PublisherName" class="control-label"></label>
+    <input asp-for="PublisherName" class="form-control" />
+    <span asp-validation-for="PublisherName" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="ImageFile" class="control-label"></label>
+    <input asp-for="ImageFile" class="form-control" type="file" /> @*input do tipo file para aparece o botão upload*@
+    <span asp-validation-for="ImageFile" class="text-danger"></span>
+</div>

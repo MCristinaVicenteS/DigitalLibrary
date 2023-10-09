@@ -1,0 +1,16 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+@*viewBag pq vou usar noutro sítio*@
+@if(ViewBag.ErrorTitle == null)  //se o objecto n trouxer valor -> é pq é o valor standart do projecto
+{
+    <h1 class="text-danger">Error!</h1>
+    <h2 class="text-danger">An error occured while processing your request.</h2>
+}
+else                             //se o objecto trouxer valor -> é pq tentaram apagar qq coisa em cascata
+{
+    <h1 class="text-danger">@ViewBag.ErrorTitle</h1>
+    <h2 class="text-danger">@Html.Raw(ViewBag.ErrorMessage)</h2>
+}

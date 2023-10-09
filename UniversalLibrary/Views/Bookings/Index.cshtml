@@ -1,0 +1,80 @@
+﻿@model IEnumerable<UniversalLibrary.Data.Entities.Booking>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+<br />
+<br />
+<br />
+<h1>Booking Management</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create"><i class="fas fa-plus"></i> Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            @if (this.User.IsInRole("Admin"))@*Se o user for o admin -> vê td os Loans de td os users*@
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.User.FullName)
+                </th>
+            }
+            <th>
+                @Html.DisplayNameFor(model => model.QuantityOfBooking)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.QuantityOfBooks)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.BookingDate)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.LimitLoadDate)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.BookingExpirationDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)  //ERROOOO - CORRIGIR
+        {
+            <tr>
+                @if (this.User.IsInRole("Admin"))
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.FullName)
+                    </td>
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantityOfBooking)
+                </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.QuantityOfBooks)
+            </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingDate)
+                </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.LimitLoadDate)
+            @if (item.LimitLoadDate < DateTime.Now)
+            {
+            <p>Expired</p>
+            }
+            </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingExpirationDate)
+                </td>
+
+                <td>
+                    <a asp-action="Accept" asp-route-id="@item.Id" class="btn btn-info" id="btnDeliver"><i class="fa fa-check" aria-hidden="true"></i> Accept</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" id="btnDelete"><i class="fa fa-trash"></i> Delete</a>                  
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

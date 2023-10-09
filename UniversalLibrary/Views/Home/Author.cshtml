@@ -1,0 +1,113 @@
+﻿@model IEnumerable<UniversalLibrary.Data.Entities.Author>
+
+@{
+    ViewData["Title"] = "BookPublisher";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--CSS-->
+<link href="~/asset/css/bootstrap.css" rel="stylesheet" />
+<link href="~/asset/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/asset/css/responsive.css" rel="stylesheet" />
+<link href="~/asset/css/style.css" rel="stylesheet" />
+<a href="~/asset/css/style.css.map"></a>
+
+
+<!--FONTES-->
+<a href="~/asset/fonts/fontawesome-webfont.ttf"></a>
+<a href="~/asset/fonts/fontawesome-webfont.woff"></a>
+<a href="~/asset/fonts/fontawesome-webfont.woff2"></a>
+<a href="~/asset/fonts/octin_sports_rg.ttf"></a>
+
+<!--JS-->
+<script src="~/asset/js/bootstrap.js"></script>
+<script src="~/asset/js/custom.js"></script>
+<script src="~/asset/js/jquery-3.4.1.min.js"></script>
+
+<br />
+<h1>Authors</h1>
+<br />
+<br />
+<br />
+<style type="text/css">
+    .tableFixedHead {
+        overflow-y: auto;
+        height: 200px;
+    }
+
+    .tableFixedHead thead th {
+        position: sticky;
+        top: 0px;
+    }
+
+    .table {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+
+    .table th, .table td {
+        text-align: center;
+    }
+
+    .th {
+        text-align: center;
+    }
+
+    .td {
+        text-align: center;
+    }
+
+    thead th {
+        background-color: darkolivegreen;
+        color: white;
+    }
+
+    tr:hover {
+        background-color: bisque;
+    }
+</style>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageAuthor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nationality)
+            </th>           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.ImageAuthor))
+                    {
+                        <img src="@Url.Content(item.ImageAuthor)" alt="Image" style="width:100px; height:150px;max-width:100%;height:auto">
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nationality)
+                </td>
+                <td>
+                    <a class="btn btn-info" asp-action="DetailsAuthor" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

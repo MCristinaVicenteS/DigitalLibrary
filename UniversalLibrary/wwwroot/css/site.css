@@ -1,0 +1,447 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+/*a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}*/
+
+/* Provide sufficient contrast against white background */
+/*a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}*/
+
+/* Sticky footer styles
+-------------------------------------------------- */
+/*html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}*/
+
+/* Sticky footer styles
+-------------------------------------------------- */
+/*html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {*/
+  /* Margin bottom by footer height */
+  /*margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;*/ /* Vertically center the text there */
+/*}*/
+
+
+img {
+    float: left;
+    margin-right: 500px; /* Adicione uma margem para separar o texto da imagem */
+}
+
+</style >
+/*---------------- Forbidden Page------------ */
+/*body {
+    background: #95b3bb;
+    font-family: 'Exo 2', sans-serif;
+    text-align: center;
+    display: flex;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    min-height: 100vh;
+    background-color: #171c24;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='264' height='264' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%231c212e' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%232d4b4d'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");*/
+    /* background by SVGBackgrounds.com */
+/*}
+
+#container {
+    align-self: center;
+    padding: 0px 10px;
+    position: relative;
+    width: 90%;
+    margin: 20px;
+    box-sizing: border-box;*/
+    /*             border: 2px rgb(83, 133, 145) solid; */
+    /*box-shadow: 0px 5px 15px -6px rgba(0,0,0,0.75);
+    border-radius: 20px;
+    max-width: 575px;
+    margin: 10px auto;
+    background: rgba(5, 13, 25, 0.569);
+}
+
+.h1-forbidden {
+    font-weight: 900;
+    width: 100;
+    margin: 10px 0px;
+    color: rgb(83, 133, 145);
+    letter-spacing: 5px;
+    font-size: 75px;
+    text-align: center;
+    transform: translateY(-35px);
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.toph h1 {
+    transform: translateY(20px);
+    font-size: 25px;
+    margin: 10px 25px;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.number {
+    color: #CDC5BD;
+}
+
+#moon {
+    position: relative;
+}
+
+#earth {
+    position: relative;
+}
+
+svg {
+    max-width: 100%;
+    max-height: 65vh;
+    min-height: 200px;
+    margin: 0px auto;
+    align-self: center;
+}
+
+#details {
+    display: flex;
+    text-align: left;
+    align-self: center;
+    font-size: 0.9em;
+}
+
+    #details span {*/
+        /*   display: block; */
+        /*color: rgb(83, 133, 145);
+        display: inline-block;
+    }
+
+        #details span:nth-child(odd) {
+            width: 150px;
+            border-left: 2px solid rgb(83, 133, 145);
+            padding-left: 10px;
+        }
+
+        #details span:nth-child(even) {
+            align-self: flex-end;
+            color: #CDC5BD;
+            text-align: right;
+            width: 100px;
+            border-right: 2px solid #CDC5BD;
+            padding-right: 10px;
+        }
+
+li {
+    list-style: none;
+    margin: 25px auto;
+    padding: 0px;
+}
+
+ul {
+    margin: 0px auto;
+    padding: 0px;
+    padding-bottom: 25px;
+}*/
+
+
+/*---------------- Error Page------------ */
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 300;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}
+
+.bg-purple {
+    background: url(http://salehriaz.com/404Page/img/bg_purple.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: left top;
+    height: 100%;
+    overflow: hidden;
+}
+
+.custom-navbar {
+    padding-top: 15px;
+}
+
+.brand-logo {
+    margin-left: 25px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.navbar-links {
+    display: inline-block;
+    float: right;
+    margin-right: 15px;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /*    overflow: hidden;*/
+    display: flex;
+    align-items: center;
+}
+
+li {
+    float: left;
+    padding: 0px 15px;
+}
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-size: 12px;
+        -webkit-transition: all 0.3s ease-in;
+        -moz-transition: all 0.3s ease-in;
+        -ms-transition: all 0.3s ease-in;
+        -o-transition: all 0.3s ease-in;
+        transition: all 0.3s ease-in;
+    }
+
+        li a:hover {
+            color: #ffcb39;
+        }
+
+.btn-request {
+    padding: 10px 25px;
+    border: 1px solid #FFCB39;
+    border-radius: 100px;
+    font-weight: 400;
+}
+
+    .btn-request:hover {
+        background-color: #FFCB39;
+        color: #fff;
+        transform: scale(1.05);
+        box-shadow: 0px 20px 20px rgba(0,0,0,0.1);
+    }
+
+.btn-go-home {
+    position: relative;
+    z-index: 200;
+    margin: 15px auto;
+    width: 100px;
+    padding: 10px 15px;
+    border: 1px solid #FFCB39;
+    border-radius: 100px;
+    font-weight: 400;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 11px;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+    .btn-go-home:hover {
+        background-color: #FFCB39;
+        color: #fff;
+        transform: scale(1.05);
+        box-shadow: 0px 20px 20px rgba(0,0,0,0.1);
+    }
+
+.central-body {
+    /*    width: 100%;*/
+    padding: 17% 5% 10% 5%;
+    text-align: center;
+}
+
+.objects img {
+    z-index: 90;
+    pointer-events: none;
+}
+
+.object_rocket {
+    z-index: 95;
+    position: absolute;
+    transform: translateX(-50px);
+    top: 75%;
+    pointer-events: none;
+    animation: rocket-movement 200s linear infinite both running;
+}
+
+.object_earth {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    z-index: 90;
+    /*    animation: spin-earth 100s infinite linear both;*/
+}
+
+.object_moon {
+    position: absolute;
+    top: 12%;
+    left: 25%;
+    /*
+    transform: rotate(0deg);
+    transition: transform ease-in 99999999999s;
+*/
+}
+
+.earth-moon {
+}
+
+.object_astronaut {
+    animation: rotate-astronaut 200s infinite linear both alternate;
+}
+
+.box_astronaut {
+    z-index: 110 !important;
+    position: absolute;
+    top: 60%;
+    right: 20%;
+    will-change: transform;
+    animation: move-astronaut 50s infinite linear both alternate;
+}
+
+.image-404 {
+    position: relative;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.stars {
+    background: url(http://salehriaz.com/404Page/img/overlay_stars.svg);
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: left top;
+}
+
+.glowing_stars .star {
+    position: absolute;
+    border-radius: 100%;
+    background-color: #fff;
+    width: 3px;
+    height: 3px;
+    opacity: 0.3;
+    will-change: opacity;
+}
+
+    .glowing_stars .star:nth-child(1) {
+        top: 80%;
+        left: 25%;
+        animation: glow-star 2s infinite ease-in-out alternate 1s;
+    }
+
+    .glowing_stars .star:nth-child(2) {
+        top: 20%;
+        left: 40%;
+        animation: glow-star 2s infinite ease-in-out alternate 3s;
+    }
+
+    .glowing_stars .star:nth-child(3) {
+        top: 25%;
+        left: 25%;
+        animation: glow-star 2s infinite ease-in-out alternate 5s;
+    }
+
+    .glowing_stars .star:nth-child(4) {
+        top: 75%;
+        left: 80%;
+        animation: glow-star 2s infinite ease-in-out alternate 7s;
+    }
+
+    .glowing_stars .star:nth-child(5) {
+        top: 90%;
+        left: 50%;
+        animation: glow-star 2s infinite ease-in-out alternate 9s;
+    }
+
+@media only screen and (max-width: 600px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .custom-navbar {
+        text-align: center;
+    }
+
+    .brand-logo img {
+        width: 120px;
+    }
+
+    .box_astronaut {
+        top: 70%;
+    }
+
+    .central-body {
+        padding-top: 25%;
+    }
+}
+
+/* styles.css */
+@keyframes progressAnimation {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
+

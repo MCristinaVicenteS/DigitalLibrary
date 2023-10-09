@@ -1,0 +1,110 @@
+﻿@model IEnumerable<UniversalLibrary.Data.Entities.Reader>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!--CSS-->
+<link href="~/asset/css/bootstrap.css" rel="stylesheet" />
+<link href="~/asset/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/asset/css/responsive.css" rel="stylesheet" />
+<link href="~/asset/css/style.css" rel="stylesheet" />
+<a href="~/asset/css/style.css.map"></a>
+
+
+<!--FONTES-->
+<a href="~/asset/fonts/fontawesome-webfont.ttf"></a>
+<a href="~/asset/fonts/fontawesome-webfont.woff"></a>
+<a href="~/asset/fonts/fontawesome-webfont.woff2"></a>
+<a href="~/asset/fonts/octin_sports_rg.ttf"></a>
+
+<!--JS-->
+<script src="~/asset/js/bootstrap.js"></script>
+<script src="~/asset/js/custom.js"></script>
+<script src="~/asset/js/jquery-3.4.1.min.js"></script>
+
+
+@*insere uma biblioteca*@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css" />
+
+<br />
+<h1>Readers Management</h1>
+<br />
+
+<div>
+    <a asp-action="Create" class="btn btn-primary"><i class="fas fa-plus"></i> Create New</a> @*chama a action create qd carrego no botão*@
+</div>
+
+<style type="text/css">
+    .table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        .table th, .table td {
+            text-align: center;
+        }
+
+    .th {
+        text-align: center;
+    }
+
+    .td {
+        text-align: center;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="fa-panel panel-default">
+            <br />
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FirstName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LastName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nif)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PhoneNumber)
+                            </th>                           
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>                                
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nif)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                </td>                               
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

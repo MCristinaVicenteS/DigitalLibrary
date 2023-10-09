@@ -1,0 +1,42 @@
+﻿@model UniversalLibrary.Models.BookOnlineViewModel
+
+@{
+    ViewData["Title"] = "ShowPdf";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Show Pdf</h1>
+
+
+
+<div>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Image" />
+            <input type="hidden" asp-for="Pdf" />
+
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+               
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    @Html.ActionLink("ShowPdf", "BookOnlines")
+    @if (!string.IsNullOrEmpty(Model.Pdf))
+    {
+        <src="@Url.Action("ShowPdf")"></src>       
+    }
+</div>
+
+
+
+

@@ -1,0 +1,64 @@
+﻿@model UniversalLibrary.Models.ReaderViewModel
+
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Reader Details</h1>
+
+<div>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Image" />
+
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>                
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Nif)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Nif)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Address)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Address)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    @if (!string.IsNullOrEmpty(Model.Image))
+    {
+        <img src="@Url.Content(Model.Image)">
+    }
+</div>
+<br />
+<br />
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning"><i class="fa fa-pen"></i> Edit</a>
+    <a asp-action="Index" class="btn btn-success"><i class="fa fa-chevron-left"></i> Back to List</a>
+</div>

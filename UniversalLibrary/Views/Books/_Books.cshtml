@@ -1,0 +1,78 @@
+﻿@model UniversalLibrary.Models.BookViewModel
+
+@*View Partial com o código repetido entre as views create e edit*@
+
+
+<div class="form-group">
+    <label asp-for="ImageFile" class="control-label"></label>
+    <input asp-for="ImageFile" class="form-control" type="file"/>    @*input do tipo file para aparece o botão upload*@
+    <span asp-validation-for="ImageFile" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Title" class="control-label"></label>
+    <input asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Isbn" class="control-label"></label>
+    <input asp-for="Isbn" class="form-control" />
+    <span asp-validation-for="Isbn" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="AuthorId" class="control-label"></label>
+    <select asp-for="AuthorId" asp-items="Model.AvailableAuthors" class="form-control"></select>
+    <span asp-validation-for="AuthorId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="CategoryId" class="control-label"></label>
+    <select asp-for="CategoryId" asp-items="Model.AvailableCategories" class="form-control"></select>
+    <span asp-validation-for="CategoryId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="BookPublisherId" class="control-label"></label>
+    <select asp-for="BookPublisherId" asp-items="Model.AvailablePublishers" class="form-control"></select>
+    <span asp-validation-for="BookPublisherId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="PhisicalId" class="control-label"></label>
+    <select asp-for="PhisicalId" asp-items="Model.AvailableLibrary" class="form-control"></select>
+    <span asp-validation-for="PhisicalId" class="text-danger"></span>
+</div>
+<div class="form-group form-check">
+    <label class="form-check-label">
+        <input class="form-check-input" asp-for="IsAvailable" /> @Html.DisplayNameFor(model => model.IsAvailable)
+    </label>
+</div>
+<div class="form-group">
+    <label asp-for="Stock" class="control-label"></label>
+    <input asp-for="Stock" class="form-control" />
+    <span asp-validation-for="Stock" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Year" class="control-label"></label> @*Alterar o aspecto do calendário*@
+    <div class="input-group date" data-provide="datepicker">
+        <input type="text" asp-for="Year" class="form-control" />
+        <div class="input-group-append">
+            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+        </div>
+        <span asp-validation-for="Year" class="text-danger"></span>
+    </div>    
+</div>
+<div class="form-group">
+    <label asp-for="PageNumber" class="control-label"></label>
+    <input asp-for="PageNumber" class="form-control" />
+    <span asp-validation-for="PageNumber" class="text-danger"></span>
+</div>
+
+@*script para alterar o calendário*@
+@section Scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function)(){
+            $('.date').datepicker({
+                orientation: "bottom",
+                autoclose: true
+            }
+                    });
+    </script>
+}

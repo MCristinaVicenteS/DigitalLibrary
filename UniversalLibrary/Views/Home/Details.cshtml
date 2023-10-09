@@ -1,0 +1,163 @@
+﻿@*@model UniversalLibrary.Data.Entities.Book*@
+@model UniversalLibrary.Models.BookViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h1>Book Details</h1>
+
+<div>
+    <a class="btn btn-success" asp-action="Books"><i class="fa fa-chevron-left"></i> Back to List</a>
+</div>
+
+<div>
+    <hr />  
+     <input type="hidden" asp-for="Id" />
+     <input type="hidden" asp-for="Image" />
+
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Isbn)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Isbn)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Author.FullName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Author.FullName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Category.CategoryName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Category.CategoryName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.BookPublisher.PublisherName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.BookPublisher.PublisherName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.IsAvailable)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.IsAvailable)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Stock)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Stock)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Year)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Year)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.PageNumber)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.PageNumber)
+                </dd>  
+                <dd class="col-md-10">
+                    @if (!string.IsNullOrEmpty(Model.Image))
+                    {
+                        <img src="@Url.Content(Model.Image)">
+                    }
+                </dd>
+            </dl>
+        </div>
+
+<br />
+<br />
+<h3> Author of this Book:</h3>
+
+<br />
+
+@if (Model.Author == null)
+{
+    <h5>This book don't have Auhtor. Update the Book.</h5>
+}
+
+
+else
+{
+    <div>
+        <div class="row">
+            <div class="col-md-8">
+                <dl class="row">
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Author.FullName)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Author.FullName)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Author.DateOfBirth)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Author.DateOfBirth)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Author.Nationality)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Author.Nationality)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Author.Biography)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Author.Biography)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Author.MajorWorks)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Author.MajorWorks)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Author.AwardsAndRecognitions)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Author.AwardsAndRecognitions)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Author.OtherDetails)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Author.OtherDetails)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        @if (!string.IsNullOrEmpty(Model.Author.ImageAuthor))
+        {
+            <img src="@Url.Content(Model.Author.ImageAuthor)">
+        }
+    </div>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

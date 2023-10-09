@@ -1,0 +1,105 @@
+@model IEnumerable<UniversalLibrary.Data.Entities.LibraryFeedback>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<h1>Libraries Feedbacks</h1>
+<br />
+<p>
+    <a class="btn btn-primary" asp-action="Create"> Create New</a>
+</p>
+
+<br />
+<br />
+<style type="text/css">
+    .tableFixedHead {
+        overflow-y: auto;
+        height: 200px;
+    }
+
+        .tableFixedHead thead th {
+            position: sticky;
+            top: 0px;
+        }
+
+    .table {
+        margin-left: auto;
+        margin-right: auto;
+        width: 110%;
+    }
+
+        .table th, .table td {
+            text-align: center;
+        }
+
+    .th {
+        text-align: center;
+    }
+
+    .td {
+        text-align: center;
+    }
+
+    thead th {
+        background-color: darkolivegreen;
+        color: white;
+    }
+
+    tr:hover {
+        background-color: bisque;
+    }
+</style>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PhisicalLibrary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhisicalLibrary.LibraryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.FullName)
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

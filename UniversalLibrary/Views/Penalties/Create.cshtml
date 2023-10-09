@@ -1,0 +1,64 @@
+﻿@using UniversalLibrary.Data.Entities
+@model UniversalLibrary.Data.Entities.Penalty
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Penalty</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="InfractionType" class="control-label"></label>
+                <select asp-for="InfractionType" class="form-control" asp-items="Html.GetEnumSelectList<InfractionType>()"></select>
+                <span asp-validation-for="InfractionType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InfractionDateTime" class="control-label"></label>
+                <input asp-for="InfractionDateTime" class="form-control" />
+                <span asp-validation-for="InfractionDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InfractionLocationId" class="control-label"></label>
+                <select asp-for="InfractionLocationId" class ="form-control" asp-items="ViewBag.InfractionLocationId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookId" class="control-label"></label>
+                <select asp-for="BookId" class ="form-control" asp-items="ViewBag.BookId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FineAmount" class="control-label"></label>
+                <input asp-for="FineAmount" class="form-control" />
+                <span asp-validation-for="FineAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentDate" class="control-label"></label>
+                <input asp-for="PaymentDate" class="form-control" />
+                <span asp-validation-for="PaymentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PaymentStatus" /> @Html.DisplayNameFor(model => model.PaymentStatus)
+                </label>
+            </div>
+            <div class="form-group">
+                <button type="submit" value="Create" class="btn btn-primary"><i class="fa fa-save"></i> Create</button>
+                <a asp-action="Index" class="btn btn-success"><i class="fa fa-chevron-left"></i> Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

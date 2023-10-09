@@ -1,0 +1,36 @@
+﻿@model UniversalLibrary.Data.Entities.BookPublisher
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Book Publisher Details</h1>
+
+<div>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.PublisherName)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.PublisherName)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    @if (!string.IsNullOrEmpty(Model.ImagLog))
+    {
+        <img src="@Url.Content(Model.ImagLog)" alt="Image" style="width:300px;height:450px;max-width:100%;height:auto">
+    }
+</div>
+<br />
+<br />
+<div>
+    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.Id"><i class="fa fa-pen"></i> Edit</a> |
+    <a asp-action="Index" class="btn btn-success"><i class="fa fa-chevron-left"></i> Back to List</a>
+</div>

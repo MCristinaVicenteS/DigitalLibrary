@@ -1,0 +1,43 @@
+﻿@model UniversalLibrary.Data.Entities.BookPublisher
+
+@{
+    ViewData["Title"] = "DetailsBookPublisher";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*insere uma biblioteca*@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css" />
+
+<h1>Details</h1>
+
+<div>
+    <h4>Book Publisher</h4>
+    <div>
+        <a class="btn btn-primary" asp-action="BookPublisher"> Back to List</a>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.PublisherName)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.PublisherName)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.ImagLog)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ImagLog)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    @if (!string.IsNullOrEmpty(Model.ImagLog))
+    {
+        <img src="@Url.Content(Model.ImagLog)" alt="Image" style="width:300px;height:450px;max-width:100%;height:auto">
+    }
+</div>

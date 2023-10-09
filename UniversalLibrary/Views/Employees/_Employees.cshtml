@@ -1,0 +1,55 @@
+﻿@model UniversalLibrary.Models.EmployeeViewModel
+
+<div class="form-group">
+    <label asp-for="FirstName" class="control-label"></label>
+    <input asp-for="FirstName" class="form-control" />
+    <span asp-validation-for="FirstName" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="LastName" class="control-label"></label>
+    <input asp-for="LastName" class="form-control" />
+    <span asp-validation-for="LastName" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="ImageFile" class="control-label"></label>
+    <input asp-for="ImageFile" class="form-control" type="file" />
+    <span asp-validation-for="ImageFile" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Nif" class="control-label"></label>
+    <input asp-for="Nif" class="form-control" />
+    <span asp-validation-for="Nif" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Since" class="control-label"></label>
+    <div class="input-group date" data-provide="datepicker">
+        <input type="text" asp-for="Since" class="form-control" />
+        <div class="input-group-append">
+            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+        </div>
+        <span asp-validation-for="Since" class="text-danger"></span>
+    </div>    
+</div>
+<div class="form-group form-check">
+    <label class="form-check-label">
+        <input class="form-check-input" asp-for="Contract" /> @Html.DisplayNameFor(model => model.Contract)
+    </label>
+</div>
+<div class="form-group">
+    <label asp-for="TypeOfEmployee" class="control-label"></label>
+    <input asp-for="TypeOfEmployee" class="form-control" />
+    <span asp-validation-for="TypeOfEmployee" class="text-danger"></span>
+</div>
+
+@*script para alterar o calendário*@
+@section Scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function)(){
+            $('.date').datepicker({
+                orientation: "bottom",
+                autoclose: true
+            }
+        });
+    </script>
+}

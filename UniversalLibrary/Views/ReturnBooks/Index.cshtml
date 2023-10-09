@@ -1,0 +1,56 @@
+﻿@model IEnumerable<UniversalLibrary.Data.Entities.ReturnBook>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+<br />
+<br />
+<br />
+<h1>Return Book Management</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create"><i class="fas fa-plus"></i> Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReturnDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDamaged)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PenaltyConfirmation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DamageDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDamaged)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PenaltyConfirmation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DamageDescription)
+            </td>
+            <td>
+                <a class="btn btn-warning"asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

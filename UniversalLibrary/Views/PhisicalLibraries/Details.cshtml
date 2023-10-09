@@ -1,0 +1,96 @@
+﻿@model UniversalLibrary.Data.Entities.PhisicalLibrary
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Phisical Library Details</h1>
+
+<div>
+    <h4>Phisical Library</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <input type="hidden" asp-for="Id" />
+            <dl class="row">            
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.LibraryName)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.LibraryName)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.WorkingDay)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.WorkingDay)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.OpenTime)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.OpenTime)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.CloseTime)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.CloseTime)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.WebSite)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.WebSite)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Address)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Address)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.FoundationDate)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.FoundationDate)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Director)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Director)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Stock)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Stock)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.GoogleMap)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.GoogleMap)
+                </dd>
+            </dl>
+        </div>
+    </div>    
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning"><i class="fa fa-pen"></i> Edit</a>
+    <a asp-action="Index" class="btn btn-success"><i class="fa fa-chevron-left"></i> Back to List</a>
+</div>

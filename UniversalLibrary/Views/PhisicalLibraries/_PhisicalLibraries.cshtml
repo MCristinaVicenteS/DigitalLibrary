@@ -1,0 +1,93 @@
+﻿@model UniversalLibrary.Data.Entities.PhisicalLibrary
+
+<div class="form-group">
+    <label asp-for="LibraryName" class="control-label"></label>
+    <input asp-for="LibraryName" class="form-control" />
+    <span asp-validation-for="LibraryName" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="WorkingDay" class="control-label"></label>
+    <input asp-for="WorkingDay" class="form-control" />
+    <span asp-validation-for="WorkingDay" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="OpenTime" class="control-label"></label>
+    <div class="input-group date" data-provide="datepicker">
+        <input type="text" asp-for="OpenTime" class="form-control" />
+        <div class="input-group-append">
+            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+        </div>
+        <span asp-validation-for="OpenTime" class="text-danger"></span>
+    </div>
+</div>
+<div class="form-group">
+    <label asp-for="CloseTime" class="control-label"></label>
+    <div class="input-group date" data-provide="datepicker">
+        <input type="text" asp-for="CloseTime" class="form-control" />
+        <div class="input-group-append">
+            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+        </div>
+        <span asp-validation-for="CloseTime" class="text-danger"></span>
+    </div>
+</div>
+<div class="form-group">
+    <label asp-for="PhoneNumber" class="control-label"></label>
+    <input asp-for="PhoneNumber" class="form-control" />
+    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Email" class="control-label"></label>
+    <input asp-for="Email" class="form-control" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="WebSite" class="control-label"></label>
+    <input asp-for="WebSite" class="form-control" />
+    <span asp-validation-for="WebSite" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Address" class="control-label"></label>
+    <input asp-for="Address" class="form-control" />
+    <span asp-validation-for="Address" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="FoundationDate" class="control-label"></label>
+    <div class="input-group date" data-provide="datepicker">
+        <input type="text" asp-for="FoundationDate" class="form-control" />
+        <div class="input-group-append">
+            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+        </div>
+        <span asp-validation-for="FoundationDate" class="text-danger"></span>
+    </div>
+</div>
+<div class="form-group">
+    <label asp-for="Director" class="control-label"></label>
+    <input asp-for="Director" class="form-control" />
+    <span asp-validation-for="Director" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Stock" class="control-label"></label>
+    <input asp-for="Stock" class="form-control" />
+    <span asp-validation-for="Stock" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="GoogleMap" class="control-label"></label>
+    <input asp-for="GoogleMap" class="form-control" />
+    <span asp-validation-for="GoogleMap" class="text-danger"></span>
+</div>
+
+@*script para alterar o calendário*@
+@section Scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function)(){
+            $('.date').datepicker({
+                orientation: "bottom",
+                autoclose: true
+            }
+                });
+    </script>
+
+   
+
+}
